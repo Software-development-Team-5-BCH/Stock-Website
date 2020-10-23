@@ -14,43 +14,36 @@ a{
 /* Primary Page Styling. */
 /**********HEADER*************/
 header {
-  background-color: #FFFFFF;
-  
+  background-color: #FFFFFF; 
 }
+
 header #logo {
   height: 5rem;
   width: 10rem;
   float: left;
   margin-top: 1rem;
-
 }
 
 header #logo a{
- 
   color: #E50A13;
   font-size: 3rem;
 }
+
 nav{
   display: flex;
   align-items: center;
   justify-content:space-around;
-  
 }
 
 ul{
   margin-left: 2rem;
-
-
- 
 }
 
 li{
  display: inline-block;
-margin-top: 1rem;
-
+ margin-top: 1rem;
  padding: 1rem;
  color: black;
-
 }
 
 nav ul li a {
@@ -65,13 +58,42 @@ nav .buy-sell{
   color: white;
   border: none;
   font-size: 1.5rem;
-  
-
 }
 
+/***********Main***************/
+main {
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+  
+}
+/**************GRAPH canvas*************/
+main #graph-canvass{
+ display: block;
+}
+main #graph-canvass #time-frame-wrapper{
+
+  display: block;
+  float: right;
+  padding: 1rem;
+ 
+
+}
+main #graph-canvass #time-frame-wrapper a{
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+
+/***********Drawing canvas ********/
+main #drawing-canvass{
+
+  width: 90vw;
+  height: 40vh;
+  background:url("https://source.unsplash.com/graph") no-repeat, center, fixed, center/cover;
+ 
 
 
-
+}
 
 /*-------------Add Icon ------------------*/
 .material-icons.orange600 { color: #16AD1C; }
