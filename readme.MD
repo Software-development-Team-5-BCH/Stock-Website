@@ -1,6 +1,6 @@
 # Stockflix Website
 
-This project is live and cab be accessed at https://software-development-team-5-bch.github.io/Stock-Website/
+This project is live and can be accessed at https://software-development-team-5-bch.github.io/Stock-Website/
 
 ## Created at Business College Helsinki
 
