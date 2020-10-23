@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Landing page */
+
+#landing {
+  background-image: url('https://source.unsplash.com/UXEJDX4SqdE');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+#landing header,
+h1,
+h2,
+p {
+  color: white;
+}
+
+#landing #logo {
+  font-size: 2rem;
+}
