@@ -22,3 +22,33 @@ p {
 #landing #logo {
   font-size: 2rem;
 }
+
+#landing .textwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 90vh;
+  text-align: center;
+  line-height: 4rem;
+}
+
+#landing h1 {
+  font-size: 4rem;
+}
+
+#landing h2 {
+  font-size: 2rem;
+}
+
+#landing p {
+  font-style: italic;
+}
+
+#landing button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
