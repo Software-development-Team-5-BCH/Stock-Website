@@ -1,106 +1,147 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+}
+:root {
+  --background-color: #fbfbfb;
+  --bright-color: white;
+  --button-color-red: #e50a13;
+  --button-color-blue: #073dfc;
+  --button-icon-green: #16ad1c;
+  --primary-text-color: black;
+  --font-regular: "Roboto Condensed", sans-serif;
+  --font-bold: "Patua One", cursive, sans-serif;
 }
 
-a{
-  text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+body {
+  font-family: var(--font-regular);
+  background-color: var(--background-color);
+}
 
+a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  font-size: 1.5rem;
+}
+::selection {
+  color: var(--background-color);
+  background: var(--button-color-blue);
 }
 /* Primary Page Styling. */
-/**********HEADER*************/
+/*-----Header-----*/
 header {
-  background-color: #FFFFFF; 
-}
-
-header #logo {
-  height: 5rem;
-  width: 10rem;
-  float: left;
+  width: 90vw;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  z-index: 10;
+  margin: 0 auto;
   margin-top: 1rem;
 }
-
-header #logo a{
-  color: #E50A13;
-  font-size: 3rem;
-}
-
-nav{
+header #logo {
   display: flex;
   align-items: center;
-  justify-content:space-around;
+  padding: 1rem;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -100px;
 }
 
-ul{
-  margin-left: 2rem;
+header nav ul li {
+  display: inline-block;
+  padding: 1rem;
+  color: black;
 }
-
-li{
- display: inline-block;
- margin-top: 1rem;
- padding: 1rem;
- color: black;
+header nav ul li a {
+  padding-bottom: 2rem;
 }
-
-nav ul li a {
-  text-decoration: none;
+header .nav-item-right {
+  display: flex;
+  align-items: center;
 }
-nav .right-side nav{
-  float: right;
-}
-nav .buy-sell{
-  background-color: #073DFC;
+header .buy-sell {
+  background-color: #073dfc;
   height: 3rem;
   width: 9rem;
   border-radius: 5px;
   color: white;
   border: none;
   font-size: 1.5rem;
-
-  margin: 2rem;
 }
-.material-icons.md-48 { font-size: 48px; 
-margin: 2rem;}
+.material-icons.md-48 {
+  font-size: 48px;
+  margin-left: 3rem;
+}
+/* Nav Hover efects */
 
+header nav ul li:hover a {
+  color: var(--button-color-blue);
+  font-weight: bold;
+  font-size: 2rem;
+  border-bottom: 3px solid var(--button-color-blue);
+}
 
+header .buy-sell:hover {
+  background-color: #232beb;
+  border: 3px solid red;
+}
+header .material-icons.md-48:hover {
+  color: var(--button-color-blue);
+}
+header #logo img {
+}
+
+header #logo img:hover {
+  animation: stockka 7s infinite linear;
+}
+
+@keyframes stockka {
+  from {
+    transform: perspective(200px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(180px) rotateY(360deg);
+  }
+}
 /***********Main***************/
 main {
   width: 90vw;
   height: 100vh;
   margin: 0 auto;
-  
 }
 /**************GRAPH canvas*************/
-main #graph-canvass{
- display: block;
+main #graph-canvass {
+  display: block;
 }
-main #graph-canvass #time-frame-wrapper{
+main #graph-canvass #time-frame-wrapper {
   position: relative;
   display: block;
   padding: 1rem;
- 
-     right: 0;
- 
 
+  right: 0;
 }
-main #graph-canvass #time-frame-wrapper a{
+main #graph-canvass #time-frame-wrapper a {
   font-size: 1.2rem;
   margin: 0.5rem;
 }
 
 /***********Drawing canvas ********/
-main #drawing-canvass{
+main #drawing-canvass {
   width: 90vw;
   height: 50vh;
-  background:url("https://source.unsplash.com/graph") no-repeat, center, fixed, center/cover;
-  
- 
-
+  background: url("https://source.unsplash.com/graph") no-repeat, center, fixed,
+    center/cover;
 }
 
 /*-------------Add Icon ------------------*/
-.material-icons.orange600 { color: #16AD1C; }
+.material-icons.orange600 {
+  color: #16ad1c;
+}
