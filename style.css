@@ -23,13 +23,17 @@ p {
   font-size: 2rem;
 }
 
-#landing .textwrapper {
+#landing .landingcontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   min-height: 90vh;
+}
+
+#landing .textwrapper {
+  max-width: 1200px;
   text-align: center;
   line-height: 4rem;
 }
