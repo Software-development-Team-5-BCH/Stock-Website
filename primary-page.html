@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Stock price tracker" content="Stock & cryptocurrency tracker">
+  <meta name="keywords" content="HTML, CSS, JavaScript, JQuery">
+  <meta name="Group 5" content="Aaron Ojala, Juha Kangas, Louis Atkinson, Prajan Shrestha">
+  <title>STOCKFLX</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link rel="stylesheet" href="/primary.css">
+
+</head>
+<body>
+  <header>
+    <div id="logo"><a href="index.html">STOCKFLX</a> </div>
+  
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Prices</a></li>
+        <li><a href="#">Accounts</a></li>
+        <li><a href="#">Invite</a></li>
+      </ul>
+      <button type="button" class="buy-sell">Trade</button>
+      <a href="#" id ="login-primary"> icon here</a>
+    </nav>
+  </header>
+
+  <main>
+  <section id= "Graph-canvas">
+    <div id= "time-frame-wrapper"> 
+      <a href="#"> 24H</a>     
+      <a href="#"> 1W</a>   
+      <a href="#"> 1M</a>  
+      <a href="#"> 1Y</a> 
+      <a href="#"> 5Y</a> 
+    </div>
+    <div id = "drawing-canvas"></div>
+    <div id="time-frame-wrapper-1"></div>
+  </section>
+  <section id = "selection-bar">
+    <i class="material-icons md-light">arrow_drop_down</i><select id="make-selection">
+      <option value="#####"> ######</option>
+      <option value="#####"> ######</option>
+      <option value="#####"> ######</option>
+    </select>
+    <button type="add" id= "add-selection" name= "plus"><i class="material-icons md-light">add</i> </button>
+  </section>
+<section id="listing">
+<table id="stock-listing">
+  <tr>
+    <th>#</th>
+    <th colspan="3">Name</th>
+    <th colspan="2">Price</th>
+    <th colspan="2">Change</th>
+    <th colspan="2">Market Cap</th>
+  </tr>
+  <tr>
+    <td><i class="material-icons md-light">add</i>1</td>
+    <td colspan="3">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+  </tr>
+  <tr>
+    <td> <i class="material-icons md-light">add</i>2</td>
+    <td colspan="3">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+    <td colspan="2">XXXXXXX</td>
+  </tr>
+  <tr>
+    <td> <i class="material-icons md-light">add</i>3</td>
+    <td colspan="3">X</td>
+    <td colspan="2">X</td>
+    <td colspan="2">X</td>
+    <td colspan="2">X</td>
+    <td colspan="2">X</td>
+  </tr>
+  
+</table>
+</section>
+    
+  </main>
+  <footer>
+    <div id="footer-container">
+   <h4> Contact Us</h4>
+
+   <div id="left-container">FAQ</div>
+   <div id="middle-container">YYYYYYYY</div>
+
+   <div id="right-container">ZZZZZZ</div>
+
+   </div>
+  
+</body>
+</html>
