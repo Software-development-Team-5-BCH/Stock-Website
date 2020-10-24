@@ -29,6 +29,7 @@ a {
   color: var(--primary-text-color);
   font-size: 1.5rem;
 }
+
 ::selection {
   color: var(--background-color);
   background: var(--button-color-blue);
@@ -221,6 +222,55 @@ th {
 
 #listing .material-icons.md-light {
   color: red;
+}
+
+/*-----------Footer----------*/
+footer {
+  position: relative;
+  display: block;
+
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+footer #footer-container {
+  display: grid;
+  grid-template-areas:
+    "a a a"
+    "b c d"
+    "b c d"
+    "b c d";
+  grid-auto-rows: 1fr;
+  padding: 1rem;
+  margin-top: 1rem;
+  grid-gap: 0.5rem;
+}
+#footer-container h4 {
+  grid-area: a;
+  text-align: center;
+  margin: 2rem auto;
+}
+#footer-container #left-container {
+  grid-area: b;
+}
+#footer-container #middle-container {
+  grid-area: c;
+}
+#footer-container #right-container {
+  grid-area: d;
+}
+
+#footer-container ul li {
+  list-style-type: none;
+  display: block;
+  padding-top: 1rem;
+}
+#footer-container a {
+  text-decoration: underline;
+  color: var(--button-color-blue);
+  font-size: 1rem;
+  padding: 1rem;
 }
 
 /****landing page hero banner */
