@@ -12,6 +12,7 @@
   --primary-text-color: black;
   --font-regular: "Roboto Condensed", sans-serif;
   --font-bold: "Patua One", cursive, sans-serif;
+  --light-grey: #e5e5e5;
 }
 
 html {
@@ -197,3 +198,48 @@ main #time-frame-wrapper-1 hr {
   margin-left: 1rem;
 }
 /* Table design */
+
+#listing table,
+td,
+th {
+  border-collapse: collapse;
+  border: 1px solid var(--light-grey);
+  padding: 10px;
+}
+#listing table {
+  width: 100%;
+
+  margin: 20px;
+}
+#listing table th {
+  font-family: var(--font-regular);
+  font-size: 1rem;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+}
+
+#listing .material-icons.md-light {
+  color: red;
+}
+
+/****landing page hero banner */
+
+/* 
+#landing {
+  position: relative;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  
+}
+
+#landing ::before {
+  content: "";
+  background: url("https://source.unsplash.com/UXEJDX4SqdE") no-repeat fixed top
+    center / cover;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  position: absolute;
+} */
