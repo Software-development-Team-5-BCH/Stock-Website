@@ -15,6 +15,7 @@
 
 </head>
 <body>
+ <div class="sticky-elements">
   <header>
     <div id="logo"><a href="index.html"><img src="./Assets/stockflix-light.svg"></a> </div>
     <nav>
@@ -29,11 +30,13 @@
       <button type="button" class="buy-sell">Trade</button>
       <a href="#" id ="login-primary"> <i class="material-icons md-48">account_circle</i></a>
     </div>
+   
   </header>
-<hr>
+  <hr>
+</div>
   <main>
   
-   <section id= "graph-canvass">
+   
       <div id= "time-frame-wrapper"> 
         <a href="#"> 24H</a>     
         <a href="#"> 1W</a>   
@@ -41,9 +44,30 @@
         <a href="#"> 1Y</a> 
         <a href="#"> 5Y</a> 
       </div>
+      <section id= "graph-canvass"></section>
       <div id = "drawing-canvass"></div>
-      <div id="time-frame-wrapper-1"></div>
-    </section>
+      <div class="line"><hr></div>
+      <div id="time-frame-wrapper-1">
+        <ul>
+          <hr>
+          <li class="item1"> Mon</li>
+          <hr>
+          <li class="item2">Tue</li>
+          <hr>
+          <li class="item3">Wed</li>
+          <hr>
+          <li class="item4">Thu</li>
+          <hr>
+          <li class="item5">Fri</li>
+          <hr>
+          <li class="item6">Sat</li>
+           <hr>
+          <li class="item7">Sun</li>
+          
+        </ul>
+      
+      </div>
+    
    <section id = "selection-bar">
       <i class="material-icons md-light">arrow_drop_down</i><select id="make-selection">
       <option value="#####"> ######</option>
