@@ -46,6 +46,7 @@ function getTickerPriceData(ticker){
  * @param {array} dataTable 
  */
 function drawTickerPriceChart(dataTable) {
+
     var data = new google.visualization.DataTable();
     
     data.addColumn('date', 'Date');
@@ -59,7 +60,8 @@ function drawTickerPriceChart(dataTable) {
     },
     vAxis: {
         title: 'Price',
-    }
+    },
+    chartArea:{left:50,top:20,width:"85%",height:"80%"}
     };
     var chart = new google.visualization.LineChart(document.getElementById('tickerPriceChart'));
     chart.draw(data, options);

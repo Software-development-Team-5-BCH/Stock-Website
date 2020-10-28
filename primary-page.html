@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Stock price tracker" content="Stock & cryptocurrency tracker">
+  <meta name="keywords" content="HTML, CSS, JavaScript, JQuery">
+  <meta name="Group 5" content="Aaron Ojala, Juha Kangas, Louis Atkinson, Prajan Shrestha">
+  <title>STOCKFLX</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./primary.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+ <div class="sticky-elements">
+  <header>
+    <div id="logo"><a href="index.html"><img src="./Assets/stockflix-light.svg"></a> </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Prices</a></li>
+        <li><a href="#">Accounts</a></li>
+        <li><a href="#">Invite</a></li>
+      </ul>
+    </nav>
+    <div class="nav-item-right">
+      <button type="button" class="buy-sell">Trade</button>
+      <a href="#" id ="login-primary"> <i class="material-icons md-48">account_circle</i></a>
+    </div>
+   
+  </header>
+  <hr>
+</div>
+  <main>
+      <div id= "time-frame-wrapper"> 
+        <a href="#"> 24H</a>     
+        <a href="#"> 1W</a>   
+        <a href="#"> 1M</a>  
+        <a href="#"> 1Y</a> 
+        <a href="#"> 5Y</a> 
+      </div>
+      <section class="priceChartSection">
+        <div id="tickerPriceChart"></div>
+      </section>    
+   <section id = "selection-bar">
+      <i class="material-icons md-light">arrow_drop_down</i><select id="make-selection">
+      <option value="#####"> ######</option>
+      <option value="#####"> ######</option>
+      <option value="#####"> ######</option>
+      </select>
+      <button type="add" id= "add-selection" name= "plus"><i class="material-icons md-light">add</i> </button>
+    </section>
+    <section id="listing">
+      <table id="stock-listing">
+        <thead>
+          <tr>
+          <th>#</th>
+          <th >Name</th>
+          <th >Price</th>
+          <th >Change</th>
+          <th >Market Cap</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><i class="material-icons md-light">remove_circle</i> &nbsp;1</td>
+          <td >XXXXXXXXXXXXX</td>
+          <td >X</td>
+          <td >X</td>
+          <td >X</td>
+       
+        </tr>
+        <tr>
+          <td> <i class="material-icons md-light">remove_circle</i> &nbsp; 2</td>
+          <td >X</td>
+          <td >X</td>
+          <td >X</td>
+          <td >X</td>
+          
+        </tr>
+        <tr>
+          <td> <i class="material-icons md-light">remove_circle</i>&nbsp; 3</td>
+          <td >X</td>
+          <td >X</td>
+          <td >X</td>
+          <td >X</td>
+          
+          
+        </tr>
+      </tbody>
+  
+      </table>
+    </section>
+  
+  </main>
+  <footer>
+    <div id="footer-container">
+        <h4> Contact Us</h4>
+
+      <div id="left-container"><h5>FAQ</h5>
+       <ul>
+         <li><a href="#">item1</a></li>
+         <li><a href="#">item2</a></li>
+         <li><a href="#">item3</a></li>
+       </ul>
+        
+      </div>
+
+        <div id="middle-container"><h5>YYYYYYYY</h5>
+          <ul>
+            <li><a href="#">item1</a></li>
+            <li><a href="#">item2</a></li>
+            <li><a href="#">item3</a></li>
+          </ul>
+        </div>
+
+      <div id="right-container"><h5>ZZZZZZ</h5>
+        <ul>
+          <li><a href="#">item1</a></li>
+          <li><a href="#">item2</a></li>
+          <li><a href="#">item3</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
