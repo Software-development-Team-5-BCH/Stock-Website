@@ -30,19 +30,28 @@
       <button type="button" class="buy-sell">Trade</button>
       <a href="#" id ="login-primary"> <i class="material-icons md-48">account_circle</i></a>
     </div>
-   
   </header>
   <hr>
 </div>
   <main>
-      <div id= "time-frame-wrapper"> 
-        <a href="#"> 24H</a>     
-        <a href="#"> 1W</a>   
-        <a href="#"> 1M</a>  
-        <a href="#"> 1Y</a> 
-        <a href="#"> 5Y</a> 
-      </div>
-      <section class="priceChartSection">
+      <section class="priceChartSection"> 
+        <div class="priceChartHeader">
+          <div class="priceInfo">
+            <span>€</span>
+            <h2 id="tickerPrice">0</h2>
+            <span id="tickerPriceDecimal">.0</span>
+            <h3 id="tickerPercentageChange">+0%</h3>
+          </div>
+          <div id= "timeFrame">   
+            <a onclick="drawTickerPriceChart('1W',this)" href="#">1W</a>   
+            <a onclick="drawTickerPriceChart('1M',this)" href="#">1M</a>  
+            <a onclick="drawTickerPriceChart('1Y',this)" href="#">1Y</a> 
+            <a onclick="drawTickerPriceChart('5Y',this)" href="#">5Y</a> 
+            <a onclick="drawTickerPriceChart('10Y',this)" href="#">10Y</a> 
+            <a onclick="drawTickerPriceChart('ALL',this)" href="#">ALL</a> 
+          </div>          
+        </div>     
+
         <div id="tickerPriceChart"></div>
       </section>    
    <section id = "selection-bar">
