@@ -1,6 +1,6 @@
-google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.load('current', { packages: ['corechart', 'line'] });
 
-(function() {
+(function () {
     getTickerOverview('IBM')
     getTickerPriceData('IBM')
 })();
@@ -9,10 +9,10 @@ google.charts.load('current', {packages: ['corechart', 'line']});
  * Makes call to Alphavantage API and gets ticker overview in JSON-format
  * @param {string} ticker 
  */
-function getTickerOverview(ticker){
+function getTickerOverview(ticker) {
     fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=demo`)
         .then((resp) => resp.json())
-        .then(data =>{
+        .then(data => {
             console.log(data)
         })
 }
@@ -22,13 +22,13 @@ function getTickerOverview(ticker){
  * Data is then converted to datatable array format [date,price]
  * @param {string} ticker 
  */
-function getTickerPriceData(ticker){
+function getTickerPriceData(ticker) {
     fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker}&apikey=demo`)
         .then((resp) => resp.json())
-        .then(data =>{
+        .then(data => {
             let priceObject = data['Time Series (Daily)']
             let dataTable = []
-            for(let date in priceObject){
+            for (let date in priceObject) {
                 dataTable.push([
                     new Date(date),
                     Number(priceObject[date]["4. close"])
@@ -48,20 +48,20 @@ function getTickerPriceData(ticker){
 function drawTickerPriceChart(dataTable) {
 
     var data = new google.visualization.DataTable();
-    
+
     data.addColumn('date', 'Date');
     data.addColumn('number', 'Price');
     data.addRows(dataTable);
 
     var options = {
-    hAxis: {
-        format:'dd/MM/yy',
-        title: 'Date',
-    },
-    vAxis: {
-        title: 'Price',
-    },
-    chartArea:{left:50,top:20,width:"85%",height:"80%"}
+        hAxis: {
+            format: 'dd/MM/yy',
+            title: 'Date',
+        },
+        vAxis: {
+            title: 'Price',
+        },
+        chartArea: { left: 50, top: 20, width: "85%", height: "80%" }
     };
     var chart = new google.visualization.LineChart(document.getElementById('tickerPriceChart'));
     chart.draw(data, options);

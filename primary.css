@@ -161,21 +161,37 @@ main #time-frame-wrapper a {
 #selection-bar {
   position: relative;
 }
-#selection-bar .material-icons.md-light {
+/* #selection-bar .material-icons.md-light {
   font-size: 2rem;
   color: var(--button-icon-green);
+} */
+#selection-bar #stocksearch{
+  margin: 1rem;
+  color: black;
+  padding: 1rem;
+  width: 12rem;
+  height: 2rem;
+  text-transform: uppercase;
+  font: var(--font-regular);
 }
-#selection-bar #make-selection {
+main #selection-bar  button{
+  padding: 0.5rem;
+  background: var(--button-color-blue);
+  color: var(--bright-color);
+  width: 5rem;
+  font: var(--font-regular);
+}
+/* #selection-bar #make-selection {
   margin: 1rem;
   color: var(--button-icon-green);
   padding: 1rem;
   width: 12rem;
   height: 2rem;
-}
-#selection-bar #add-selection {
+} */
+/* #selection-bar #add-selection {
   font-size: 0.3rem;
   margin-left: 1rem;
-}
+} */
 /* Table design */
 
 #listing table,
