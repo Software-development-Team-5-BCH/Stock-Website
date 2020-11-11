@@ -134,14 +134,26 @@ main {
   margin: 0 auto;
 }
 
-/***********Drawing canvas ********/
+/***********Ticker statistics ********/
 
-.priceChartSection{
-  margin-top: 20px;
+.tickerStatistics{
+  height: 500px;
+  border: 1px solid rgb(236, 236, 236);
+  padding-bottom: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.tickerStats{
+  height: 100px;
+  background-color: rgb(235, 235, 235);
+}
+
+/***********Price Chart ********/
+.priceChart{
   height: 400px;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid rgb(236, 236, 236);
 }
 
 #tickerPriceChart{

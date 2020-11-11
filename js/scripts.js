@@ -6,7 +6,35 @@ google.charts.load('current', {packages: ['corechart', 'line']});
     let tickerPriceData = []
     getTickerOverview('IBM')
     getTickerPriceData('IBM')
+    createUserStockList()
 })();
+
+function createUserStockList(){
+    let userStockList = document.getElementById('userStockList')
+    userStockList.innerHTML = ''
+    let userList = JSON.parse(localStorage.getItem('userList'))||[]
+    userList.forEach(item =>{
+        let ticker = document.createElement('li')
+        ticker.textContent = item
+        ticker.addEventListener('click',()=>removeTickerFromUserList(item))
+        userStockList.appendChild(ticker)
+    })
+}
+
+function addTickerToUserList(){
+    const ticker = document.getElementById('userListInput').value
+    let userList = JSON.parse(localStorage.getItem('userList'))||[]
+    userList.push(ticker)
+    localStorage.setItem('userList',JSON.stringify(userList))
+    createUserStockList()
+}
+
+function removeTickerFromUserList(ticker){
+    let userList = JSON.parse(localStorage.getItem('userList'))||[]
+    userList=userList.filter(item => item!==ticker)
+    localStorage.setItem('userList',JSON.stringify(userList))
+    createUserStockList()
+}
 
 /**
  * Makes call to Alphavantage API and gets ticker overview in JSON-format
@@ -16,8 +44,16 @@ function getTickerOverview(ticker){
     fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=demo`)
         .then((resp) => resp.json())
         .then(data =>{
-            console.log(data)
+            createTickerStats(data)
         })
+}
+
+
+function createTickerStats(data){
+    console.log(data)
+    console.log(data.Symbol)
+    let symbol = data.Symbol
+    document.getElementById('tickerSymbol').textContent = symbol
 }
 
 /**
