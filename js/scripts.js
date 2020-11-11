@@ -758,5 +758,9 @@ searchInput.addEventListener("keyup", () => {
 });
 
 const selectTicker = (ticker) => {
-  console.log(ticker);
+  let tickerPriceData = [];
+  getTickerOverview(ticker);
+  getTickerPriceData(ticker);
+
+  suggestionsPanel.innerHTML = "";
 };
