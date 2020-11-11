@@ -119,6 +119,23 @@ function createTickerStats(data) {
   console.log(data.Symbol);
   let symbol = data.Symbol;
   document.getElementById("tickerSymbol").textContent = symbol;
+
+  let average = data["50DayMovingAverage"]
+  let low = data["52WeekHigh"]
+  let high = data["52WeekLow"]
+  let country = data.Country
+  let currency = data.Currency
+  let dividendyield = data.DividendYield
+  let marketcap = data.MarketCapitalization
+  let sector = data.Sector
+  document.getElementById('average').textContent = average
+  document.getElementById('low').textContent = low
+  document.getElementById('high').textContent = high
+  document.getElementById('sector').textContent = sector
+  document.getElementById('country').textContent = country
+  document.getElementById('currency').textContent = currency
+  document.getElementById('dividendyield').textContent = dividendyield
+  document.getElementById('marketcap').textContent = marketcap
 }
 
 /**

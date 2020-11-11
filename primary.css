@@ -10,8 +10,8 @@
   --button-color-blue: #073dfc;
   --button-icon-green: #16ad1c;
   --primary-text-color: black;
-  --font-regular: "Roboto Condensed", sans-serif;
-  --font-bold: "Patua One", cursive, sans-serif;
+  --font-regular: 'Roboto Condensed', sans-serif;
+  --font-bold: 'Patua One', cursive, sans-serif;
   --light-grey: #e5e5e5;
 }
 
@@ -147,6 +147,45 @@ main {
 .tickerStats {
   height: 100px;
   background-color: rgb(235, 235, 235);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-gap: 3px;
+}
+
+#tickerSymbol {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.tickerSearch {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--light-grey);
+  background-color: #232b2b;
+}
+
+.dashboard:nth-child(2) {
+  background-color: #414a4c;
+}
+.dashboard:nth-child(4) {
+  background-color: #414a4c;
+}
+.dashboard:nth-child(7) {
+  background-color: #414a4c;
+}
+.dashboard:nth-child(9) {
+  background-color: #414a4c;
 }
 
 /***********Price Chart ********/
@@ -205,7 +244,7 @@ main {
 /***********Search button  ********/
 
 #autocomplete {
-  background-image: url("Assets/searchicon.svg");
+  background-image: url('Assets/searchicon.svg');
   padding: 0.5rem 0 0.5rem 3rem;
   background-position: 5px 4px; /* Position the search icon */
   background-repeat: no-repeat;
@@ -250,7 +289,7 @@ main {
 #selection-bar {
   position: relative;
 }
-#selection-bar #stocksearch{
+#selection-bar #stocksearch {
   margin: 1rem;
   color: black;
   padding: 1rem;
@@ -259,14 +298,14 @@ main {
   text-transform: uppercase;
   font: var(--font-regular);
 }
-main #selection-bar  button{
+main #selection-bar button {
   padding: 0.5rem;
   background: var(--button-color-blue);
   color: var(--bright-color);
   width: 5rem;
   font: var(--font-regular);
 }
-#errormessage{
+#errormessage {
   color: red;
   margin-left: 1rem;
 }
@@ -295,7 +334,7 @@ th {
 #listing .material-icons.md-light {
   color: red;
 }
-tbody{
+tbody {
   text-align: center;
   font-family: var(--font-regular);
 }
@@ -312,10 +351,10 @@ footer {
 footer #footer-container {
   display: grid;
   grid-template-areas:
-    "a a a"
-    "b c d"
-    "b c d"
-    "b c d";
+    'a a a'
+    'b c d'
+    'b c d'
+    'b c d';
   grid-auto-rows: 1fr;
   padding: 1rem;
   margin-top: 1rem;
@@ -347,4 +386,3 @@ footer #footer-container {
   font-size: 1rem;
   padding: 1rem;
 }
-
