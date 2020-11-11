@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/primary.css">
-
+  <script src="./autoComplete.js"></script>
+  
 </head>
 <body>
  <div class="sticky-elements">
@@ -35,9 +36,16 @@
   <hr>
 </div>
   <main>
-  
-   
-      <div id= "time-frame-wrapper"> 
+    
+      <div id= "time-frame-wrapper">  
+        <div class="stock-searcher">
+        <input type = 'text' id = 'autocomplete' placeholder="Search all assets."> 
+        <div class="suggestions">
+
+        </div>
+      </div>
+        
+        </div>
         <a href="#"> 24H</a>     
         <a href="#"> 1W</a>   
         <a href="#"> 1M</a>  
@@ -149,6 +157,7 @@
       </div>
 
     </div>
-  
+  <script src="assetsearcher.js"></script>
+
 </body>
 </html>
