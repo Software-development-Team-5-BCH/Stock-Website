@@ -17,7 +17,7 @@ function submit() {
     makeTable(stock);
   }
   else {
-    Error('Stock Not Found')
+    sendError()
 
   }
 }
@@ -26,8 +26,8 @@ function makeTable(xxxx) {
   for (let result of data) {
     if (xxxx === result.ticker) {
       let htmlString = "";
-      htmlString += `<tr>
-      <td><i class="material-icons md-light">remove_circle</i></td>
+      htmlString += `<tr id="tablerow">
+      <td id="removeList" onclick="removeList()"><i class="material-icons md-light">remove_circle</i></td>
       <td>${result.ticker}</td>
       <td>${result.price} </td>`;
       if (result.change >= 0) {
@@ -47,4 +47,16 @@ function makeTable(xxxx) {
     }
   }
   return;
+}
+
+function sendError() {
+  const newMessage = document.getElementById('errormessage');
+  newMessage.innerHTML = 'Not Found'
+}
+
+
+function removeList() {
+  const removeList = document.getElementById("tablerow");
+  removeList.innerHTML = "";
+
 }
