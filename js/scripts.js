@@ -121,8 +121,8 @@ function createTickerStats(data) {
   document.getElementById("tickerSymbol").textContent = symbol;
 
   let average = data["50DayMovingAverage"]
-  let low = data["52WeekHigh"]
-  let high = data["52WeekLow"]
+  let low = data["52WeekLow"]
+  let high = data["52WeekHigh"]
   let country = data.Country
   let currency = data.Currency
   let dividendyield = data.DividendYield
