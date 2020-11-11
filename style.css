@@ -83,3 +83,27 @@ p {
   font-size: 1.5rem;
   box-shadow: inset 0px 0px 6px 2px rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 768px) {
+  #landing h1 {
+    font-size: 2rem;
+  }
+  #landing h2 {
+    font-size: 1rem;
+  }
+  #landing .textwrapper {
+    line-height: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #landing h1 {
+    font-size: 1.5rem;
+  }
+  #landing h2 {
+    font-size: 10px;
+  }
+  #landing .textwrapper {
+    line-height: 2rem;
+  }
+}
