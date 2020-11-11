@@ -54,15 +54,8 @@
     <main>
       <section class="priceChartSection"></section>
       <section id="selection-bar">
-        <i class="material-icons md-light">arrow_drop_down</i
-        ><select id="make-selection">
-          <option value="#####">######</option>
-          <option value="#####">######</option>
-          <option value="#####">######</option>
-        </select>
-        <button type="add" id="add-selection" name="plus">
-          <i class="material-icons md-light">add</i>
-        </button>
+        <input type="search" id="stocksearch" name="gsearch">
+        <button type="submit" id="add-selection" name="plus"><i class="material-icons md-light">add</i> </button>
       </section>
       <section id="listing">
         <table id="stock-listing">
@@ -75,34 +68,7 @@
               <th>Market Cap</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>
-                <i class="material-icons md-light">remove_circle</i> &nbsp;1
-              </td>
-              <td>XXXXXXXXXXXXX</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>
-                <i class="material-icons md-light">remove_circle</i> &nbsp; 2
-              </td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>
-                <i class="material-icons md-light">remove_circle</i>&nbsp; 3
-              </td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-              <td>X</td>
-            </tr>
+          <tbody id="stockwatchlist">
           </tbody>
         </table>
       </section>
@@ -142,30 +108,33 @@
     <!-- 
   <footer>
     <div id="footer-container">
-        <h4> Contact Us</h4>
+      <h4> Contact Us</h4>
 
-      <div id="left-container"><h5>FAQ</h5>
-       <ul>
-         <li><a href="#">item1</a></li>
-         <li><a href="#">item2</a></li>
-         <li><a href="#">item3</a></li>
-       </ul>
-        
+      <div id="left-container">
+        <h5>FAQ</h5>
+        <ul>
+          <li><a href="#">How to trade?</a></li>
+          <li><a href="#">How to turn on Notifications?</a></li>
+          <li><a href="#">Is there a mobile app?</a></li>
+        </ul>
+
       </div>
 
-        <div id="middle-container"><h5>YYYYYYYY</h5>
-          <ul>
-            <li><a href="#">item1</a></li>
-            <li><a href="#">item2</a></li>
-            <li><a href="#">item3</a></li>
-          </ul>
-        </div>
-
-      <div id="right-container"><h5>ZZZZZZ</h5>
+      <div id="middle-container">
+        <h5>Departments</h5>
         <ul>
-          <li><a href="#">item1</a></li>
-          <li><a href="#">item2</a></li>
-          <li><a href="#">item3</a></li>
+          <li><a href="#">Research & Development</a></li>
+          <li><a href="#">Sales & Marketing</a></li>
+          <li><a href="#">Human Resources</a></li>
+        </ul>
+      </div>
+
+      <div id="right-container">
+        <h5>Visit us</h5>
+        <ul>
+          <li><a href="#">Helsinki</a></li>
+          <li><a href="#">Vantaa</a></li>
+          <li><a href="#">Espoo </a></li>
         </ul>
       </div>
 
@@ -173,6 +142,7 @@
   </footer>
   -->
     <script src="./js/scripts.js"></script>
-    <script src="assetsearcher.js"></script>
-  </body>
+    <script src="js/table.js"></script>
+</body>
+
 </html>
