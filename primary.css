@@ -203,7 +203,6 @@ th {
 }
 #listing table {
   width: 100%;
-
   margin: 20px;
 }
 #listing table th {
@@ -218,6 +217,10 @@ th {
   color: red;
 }
 
+tbody {
+  text-align: center;
+  font-family: var(--font-regular);
+}
 /*-----------Footer----------*/
 footer {
   position: relative;

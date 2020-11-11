@@ -3,6 +3,13 @@
 
 //This feature could be implemented using local storage
 // however if a user login is able to be created then the feature should ideally be linked to the users profile.
+const data = [
+  { ticker: 'AAPL', price: 109, change: 1.35, volume: 1230000, date: '9.10.2020' },
+  { ticker: 'IBM', price: 120, change: -2.45, volume: 134000, date: '9.10.2020' },
+  { ticker: 'GOOGL', price: 1700, change: 3.42, volume: 2130000, date: '9.10.2020' },
+]
+
+
 var stocklist = document.getElementById('stockwatchlist');
 document.getElementById("add-selection").addEventListener('click', submit);
 var mystock = ['AAPL', 'ABT', 'ABBV', 'ACN', 'ACE', 'ADBE', 'ADT', 'AAP', 'AES', 'AET', 'AFL',
@@ -12,49 +19,37 @@ var mystock = ['AAPL', 'ABT', 'ABBV', 'ACN', 'ACE', 'ADBE', 'ADT', 'AAP', 'AES',
 function submit() {
   var stock = document.getElementById('stocksearch').value;
   if (mystock.includes(stock)) {
-    getDaileyOverview(stock)
-  } else {
+    makeTable(stock);
+  }
+  else {
     console.log('Not found');
   }
 }
-// Extracts share data upon search input match found
-async function getDaileyOverview(blank) {
-  await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${blank}&outputsize=compac&apikey=4QOMNDXXBE7Q9NE1`)
-    .then((resp) => resp.json())
-    .then(data => {
-      let mydata = data['Time Series (Daily)']
-      function extract() {
-        const today = new Date().toISOString().substr(0, 10);
-        const myresult = [];
-        for (let newdata in mydata) {
-          if (newdata === today) {
-            myresult.push(
-              Number(mydata[newdata]["1. open"]),
-              Number(mydata[newdata]["2. high"]),
-              Number(mydata[newdata]["3. low"]),
-              (Number(mydata[newdata]["4. close"]))
-            );
-          }
-        }
-        return myresult;
-      }
-      console.log(extract());
-      const result = extract();
+
+function makeTable(xxxx) {
+  for (let result of data) {
+    if (xxxx === result.ticker) {
       let htmlString = "";
       htmlString += `<tr>
-      <td><i class="material-icons md-light">remove_circle</i><td>
-      <td>${stock}</td>
-      <td>${result[1]} </td>
-      <td>${result[2]} </td>
-      <td>${result[0]} </td>
-      <td>${result[3]} </td>
-      </tr>\n`
+      <td><i class="material-icons md-light">remove_circle</i></td>
+      <td>${result.ticker}</td>
+      <td>${result.price} </td>`;
+      if (result.change >= 0) {
+        htmlString += `
+         <td><i class="material-icons md-light">trending_up</i> 
+         ${result.change}</td>
+        `}
+      else {
+        htmlString += `
+        <td><i class="material-icons md-light">trending_down</i> 
+        ${result.change}</td>`
+      }
+      htmlString +=
+        `<td>${result.volume} </td>
+         </tr>\n`
       stocklist.innerHTML = htmlString;
-    });
-
-};
-
-
-
-
+    }
+  }
+  return;
+}
 
