@@ -195,21 +195,23 @@ main {
 #selection-bar {
   position: relative;
 }
-#selection-bar .material-icons.md-light {
-  font-size: 2rem;
-  color: var(--button-icon-green);
-}
-#selection-bar #make-selection {
+#selection-bar #stocksearch{
   margin: 1rem;
-  color: var(--button-icon-green);
+  color: black;
   padding: 1rem;
   width: 12rem;
   height: 2rem;
+  text-transform: uppercase;
+  font: var(--font-regular);
 }
-#selection-bar #add-selection {
-  font-size: 0.3rem;
-  margin-left: 1rem;
+main #selection-bar  button{
+  padding: 0.5rem;
+  background: var(--button-color-blue);
+  color: var(--bright-color);
+  width: 5rem;
+  font: var(--font-regular);
 }
+
 /* Table design */
 
 #listing table,
@@ -221,7 +223,6 @@ th {
 }
 #listing table {
   width: 100%;
-
   margin: 20px;
 }
 #listing table th {
@@ -235,7 +236,10 @@ th {
 #listing .material-icons.md-light {
   color: red;
 }
-
+tbody{
+  text-align: center;
+  font-family: var(--font-regular);
+}
 /*-----------Footer----------*/
 footer {
   position: relative;
@@ -285,23 +289,3 @@ footer #footer-container {
   padding: 1rem;
 }
 
-/****landing page hero banner */
-
-/* 
-#landing {
-  position: relative;
-  opacity: 1;
-  height: 100%;
-  width: 100%;
-  
-}
-
-#landing ::before {
-  content: "";
-  background: url("https://source.unsplash.com/UXEJDX4SqdE") no-repeat fixed top
-    center / cover;
-  height: 100%;
-  width: 100%;
-  opacity: 0.6;
-  position: absolute;
-} */
