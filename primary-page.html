@@ -52,11 +52,11 @@
       <hr />
     </div>
     <main>
-      <section class="priceChartSection"></section>
       <section id="selection-bar">
         <input type="search" id="stocksearch" name="gsearch">
-        <button type="submit" id="add-selection" name="plus"><i class="material-icons md-light">add</i> </button>
+        <button onclick="submit()" type="submit" id="add-selection" name="plus"><i class="material-icons md-light">add</i> </button>
       </section>
+      <section id="errormessage"></section>
       <section id="listing">
         <table id="stock-listing">
           <thead>
@@ -142,7 +142,7 @@
   </footer>
   -->
     <script src="./js/scripts.js"></script>
-    <script src="js/table.js"></script>
+    <!-- <script src="js/table.js"></script> -->
 </body>
 
 </html>

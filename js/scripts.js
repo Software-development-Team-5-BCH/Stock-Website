@@ -7,20 +7,17 @@ google.charts.load("current", { packages: ["corechart", "line"] });
   createUserStockList();
 })();
 
-function createUserStockList() {
-  let userList = JSON.parse(localStorage.getItem("userList")) || [];
-  // getTickerListData(userList)
-}
-
 function getTickerListData(userList) {
   let numberOfTickers = userList.length;
   let list = userList.join(",");
   let parsedData = [];
+
   fetch(
-    `http://api.marketstack.com/v1/eod?access_key=9a1f6570075e0b0e76f95b75c571461e&symbols=AAPL,IBM`
+    `http://api.marketstack.com/v1/eod?access_key=9a1f6570075e0b0e76f95b75c571461e&symbols=${list}`
   )
     .then((resp) => resp.json())
     .then((data) => {
+
       for (var i = 0; i < numberOfTickers; i++) {
         console.log(data.data[i]);
         let percentageChange =
@@ -35,13 +32,60 @@ function getTickerListData(userList) {
           date: data.data[i].date.split("T")[0],
         });
       }
-      console.log(parsedData);
-      return parsedData;
+      makeTable(parsedData)
     });
 }
 
-function addTickerToUserList() {
-  const ticker = document.getElementById("userListInput").value;
+function makeTable(listData) {
+    var stocklist = document.getElementById('stockwatchlist');
+    stocklist.innerHTML = ''
+    for (let result of listData) {
+        console.log(result)
+        let htmlString = "";
+        htmlString += `<tr id="tablerow">
+        <td id="removeList" onclick="removeTickerFromUserList('${result.ticker}')"><i class="material-icons md-light">remove_circle</i></td>
+        <td>${result.ticker}</td>
+        <td>${result.price} </td>`;
+        if (result.change >= 0) {
+        htmlString += `
+        <td><i class="material-icons md-light">trending_up</i> 
+        ${result.change}</td>
+        `}
+        else {
+        htmlString += `
+        <td><i class="material-icons md-light">trending_down</i> 
+        ${result.change}</td>`
+        }
+        htmlString +=
+        `<td>${result.volume} </td>
+        </tr>\n`
+        stocklist.innerHTML += htmlString;
+    }
+    return;
+}  
+
+// Aks to extract share prices if search matches the listing
+function submit() {
+    var stock = document.getElementById('stocksearch').value;
+    if (stocks.includes(stock)) {
+        addTickerToUserList(stock)
+    }
+    else {
+      sendError()
+    }
+  }
+
+function sendError() {
+    const newMessage = document.getElementById('errormessage');
+    newMessage.innerHTML = 'Not Found'
+}
+
+function createUserStockList() {
+    let userList = JSON.parse(localStorage.getItem("userList")) || [];
+    getTickerListData(userList)
+}
+
+function addTickerToUserList(ticker) {
   let userList = JSON.parse(localStorage.getItem("userList")) || [];
   userList.push(ticker);
   localStorage.setItem("userList", JSON.stringify(userList));
@@ -49,6 +93,7 @@ function addTickerToUserList() {
 }
 
 function removeTickerFromUserList(ticker) {
+    console.log(ticker)
   let userList = JSON.parse(localStorage.getItem("userList")) || [];
   userList = userList.filter((item) => item !== ticker);
   localStorage.setItem("userList", JSON.stringify(userList));
@@ -236,7 +281,7 @@ function getNumberOfBusinessDays(timePeriod) {
 
 // Asset searcher section //
 
-stocks = [
+let stocks = [
   "ABT",
   "ABBV",
   "ACN",
