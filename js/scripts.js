@@ -63,14 +63,14 @@ function createTickerStats(data){
     let dividendyield = data.DividendYield
     let marketcap = data.MarketCapitalization
     let sector = data.Sector
-    document.getElementById('average').textContent =`50 Day Moving Average: ${average}`
-    document.getElementById('low').textContent =`52 Week Low: ${low}`
-    document.getElementById('high').textContent =`52 Week High: ${high}`
-    document.getElementById('sector').textContent =`Sector: ${sector}`
-    document.getElementById('country').textContent =`Country: ${country}`
-    document.getElementById('currency').textContent =`Currency: ${currency}`
-    document.getElementById('dividendyield').textContent =`Dividend Yield: ${dividendyield}`
-    document.getElementById('marketcap').textContent =`Market Cap: ${marketcap}`
+    document.getElementById('average').textContent = average
+    document.getElementById('low').textContent = low
+    document.getElementById('high').textContent = high
+    document.getElementById('sector').textContent = sector
+    document.getElementById('country').textContent = country
+    document.getElementById('currency').textContent = currency
+    document.getElementById('dividendyield').textContent = dividendyield
+    document.getElementById('marketcap').textContent = marketcap
 }
 
 /**
