@@ -30,30 +30,12 @@
       <button type="button" class="buy-sell">Trade</button>
       <a href="#" id ="login-primary"> <i class="material-icons md-48">account_circle</i></a>
     </div>
-   
   </header>
   <hr>
 </div>
   <main>
-      <div id= "time-frame-wrapper"> 
-    
-      <div id= "time-frame-wrapper">  
-        <div class="stock-searcher">
-        <input type = 'text' id = 'autocomplete' placeholder="Search all assets."> 
-        <div class="suggestions">
+      <section class="priceChartSection"> 
 
-        </div>
-      </div>
-        
-        </div>
-        <a href="#"> 24H</a>     
-        <a href="#"> 1W</a>   
-        <a href="#"> 1M</a>  
-        <a href="#"> 1Y</a> 
-        <a href="#"> 5Y</a> 
-      </div>
-      <section class="priceChartSection">
-        <div id="tickerPriceChart"></div>
       </section>    
    <section id = "selection-bar">
       <i class="material-icons md-light">arrow_drop_down</i><select id="make-selection">
@@ -104,7 +86,30 @@
   
       </table>
     </section>
-  
+    <section class="tickerStatistics">
+      <div class="priceChart">
+        <div class="tickerStats">
+          <h2 id="tickerSymbol"></h2>
+        </div>
+        <div class="priceChartHeader">
+          <div class="priceInfo">
+            <span>€</span>
+            <h2 id="tickerPrice">0</h2>
+            <span id="tickerPriceDecimal">.0</span>
+            <h3 id="tickerPercentageChange">+0%</h3>
+          </div>
+          <div id= "timeFrame">   
+            <a onclick="drawTickerPriceChart('1W',this)" href="#">1W</a>   
+            <a onclick="drawTickerPriceChart('1M',this)" href="#">1M</a>  
+            <a onclick="drawTickerPriceChart('1Y',this)" href="#">1Y</a> 
+            <a onclick="drawTickerPriceChart('5Y',this)" href="#">5Y</a> 
+            <a onclick="drawTickerPriceChart('10Y',this)" href="#">10Y</a> 
+            <a onclick="drawTickerPriceChart('ALL',this)" href="#">ALL</a> 
+          </div>          
+        </div>     
+        <div id="tickerPriceChart"></div>
+      </div>  
+    </section>
   </main>
   <footer>
     <div id="footer-container">

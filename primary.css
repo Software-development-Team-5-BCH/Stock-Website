@@ -133,15 +133,69 @@ main {
   height: 100vh;
   margin: 0 auto;
 }
-/**************GRAPH canvas*************/
 
-main #time-frame-wrapper {
+/***********Ticker statistics ********/
+
+.tickerStatistics {
+  height: 500px;
+  border: 1px solid rgb(236, 236, 236);
+  padding-bottom: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.tickerStats {
+  height: 100px;
+  background-color: rgb(235, 235, 235);
+}
+
+/***********Price Chart ********/
+.priceChart {
+  height: 400px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#tickerPriceChart {
+  height: 300px;
+}
+
+.priceChartHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.priceInfo {
+  display: flex;
+  margin-top: 20px;
+}
+
+#tickerPrice {
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+}
+
+.priceInfo span {
+  padding-top: 4px;
+  font-size: 32px;
+}
+
+.priceInfo h3 {
+  font-size: 18px;
+  padding-top: 4px;
+  margin-left: 15px;
+  color: rgb(5, 177, 105);
+}
+
+#timeFrame {
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-main #time-frame-wrapper a {
+#timeFrame a {
   font-size: 1.2rem;
   margin: 0.3rem;
   padding: 0.3rem;
@@ -181,12 +235,13 @@ main #time-frame-wrapper a {
   background-color: #e9e9e9;
 }
 /***********Drawing canvas ********/
-.priceChartSection{
+.priceChartSection {
   height: 300px;
 }
 
-#tickerPriceChart{
+#tickerPriceChart {
   height: 300px;
+  color: rgb(177, 177, 177);
 }
 
 /*-------------Add Icon ------------------*/
