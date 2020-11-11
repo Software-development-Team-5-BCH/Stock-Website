@@ -1,7 +1,5 @@
 google.charts.load('current', {packages: ['corechart', 'line']});
 
-
-
 (function() {
     let tickerPriceData = []
     getTickerOverview('IBM')
@@ -10,14 +8,30 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 })();
 
 function createUserStockList(){
-    let userStockList = document.getElementById('userStockList')
-    userStockList.innerHTML = ''
     let userList = JSON.parse(localStorage.getItem('userList'))||[]
-    userList.forEach(item =>{
-        let ticker = document.createElement('li')
-        ticker.textContent = item
-        ticker.addEventListener('click',()=>removeTickerFromUserList(item))
-        userStockList.appendChild(ticker)
+    // getTickerListData(userList)
+}
+
+function getTickerListData(userList){
+    let numberOfTickers = userList.length
+    let list = userList.join(',')
+    let parsedData = []
+    fetch(`http://api.marketstack.com/v1/eod?access_key=9a1f6570075e0b0e76f95b75c571461e&symbols=AAPL,IBM`)
+    .then((resp) => resp.json())
+    .then(data =>{
+        for(var i=0;i<numberOfTickers;i++){
+            console.log(data.data[i])
+            let percentageChange = ((data.data[i].close-data.data[i+numberOfTickers].close)/data.data[i+numberOfTickers].close)*100
+            parsedData.push({
+                ticker:data.data[i].symbol,
+                price:data.data[i].close,
+                change:Number(percentageChange.toFixed(2)),
+                volume:data.data[i].volume,
+                date:data.data[i].date.split('T')[0]
+            })
+        }
+        console.log(parsedData)
+        return parsedData
     })
 }
 
@@ -41,7 +55,7 @@ function removeTickerFromUserList(ticker){
  * @param {string} ticker 
  */
 function getTickerOverview(ticker){
-    fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=demo`)
+    fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${ticker}&apikey=PH5C1GN8BH39WZ4K`)
         .then((resp) => resp.json())
         .then(data =>{
             createTickerStats(data)
@@ -62,7 +76,7 @@ function createTickerStats(data){
  * @param {string} ticker 
  */
 function getTickerPriceData(ticker){
-    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker}&outputsize=full&apikey=demo`)
+    fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker}&outputsize=full&apikey=PH5C1GN8BH39WZ4K`)
         .then((resp) => resp.json())
         .then(data =>{
             let priceObject = data['Time Series (Daily)']
