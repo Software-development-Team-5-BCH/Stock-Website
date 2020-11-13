@@ -65,8 +65,8 @@ function makeTable(listData) {
 }
 
 // Ask to extract share prices if search matches the listing
-function submit() {
-  var stock = document.getElementById("autocomplete").value.toUpperCase();
+async function submit() {
+  var stock = await document.getElementById("tickerSymbol").innerText;
   if (stocks.includes(stock)) {
     addTickerToUserList(stock)
   }
@@ -80,6 +80,11 @@ function sendError() {
   newMessage.innerHTML = 'Not Found'
 }
 
+window.onclick = function (event) {
+  var error = this.document.getElementById('errormessage')
+  if (event.target == error)
+    error.style.display = "none";
+}
 function createUserStockList() {
   let userList = JSON.parse(localStorage.getItem("userList")) || [];
   getTickerListData(userList)
@@ -299,6 +304,7 @@ function getNumberOfBusinessDays(timePeriod) {
 // Asset searcher section //
 
 let stocks = [
+  "AAPL",
   "ABT",
   "ABBV",
   "ACN",
