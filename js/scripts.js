@@ -37,52 +37,52 @@ function getTickerListData(userList) {
 }
 
 function makeTable(listData) {
-    var stocklist = document.getElementById('stockwatchlist');
-    stocklist.innerHTML = ''
-    for (let result of listData) {
-        console.log(result)
-        let htmlString = "";
-        htmlString += `<tr id="tablerow">
+  var stocklist = document.getElementById('stockwatchlist');
+  stocklist.innerHTML = ''
+  for (let result of listData) {
+    console.log(result)
+    let htmlString = "";
+    htmlString += `<tr id="tablerow">
         <td id="removeList" onclick="removeTickerFromUserList('${result.ticker}')"><i class="material-icons md-light">remove_circle</i></td>
         <td>${result.ticker}</td>
         <td>${result.price} </td>`;
-        if (result.change >= 0) {
-        htmlString += `
+    if (result.change >= 0) {
+      htmlString += `
         <td><i class="material-icons md-light">trending_up</i> 
         ${result.change}</td>
         `}
-        else {
-        htmlString += `
+    else {
+      htmlString += `
         <td><i class="material-icons md-light">trending_down</i> 
         ${result.change}</td>`
-        }
-        htmlString +=
-        `<td>${result.volume} </td>
+    }
+    htmlString +=
+      `<td>${result.volume} </td>
         </tr>\n`
-        stocklist.innerHTML += htmlString;
-    }
-    return;
-}  
-
-// Aks to extract share prices if search matches the listing
-function submit() {
-    var stock = document.getElementById('stocksearch').value;
-    if (stocks.includes(stock)) {
-        addTickerToUserList(stock)
-    }
-    else {
-      sendError()
-    }
+    stocklist.innerHTML += htmlString;
   }
+  return;
+}
+
+// Ask to extract share prices if search matches the listing
+function submit() {
+  var stock = document.getElementById("autocomplete").value.toUpperCase();
+  if (stocks.includes(stock)) {
+    addTickerToUserList(stock)
+  }
+  else {
+    sendError()
+  }
+}
 
 function sendError() {
-    const newMessage = document.getElementById('errormessage');
-    newMessage.innerHTML = 'Not Found'
+  const newMessage = document.getElementById('errormessage');
+  newMessage.innerHTML = 'Not Found'
 }
 
 function createUserStockList() {
-    let userList = JSON.parse(localStorage.getItem("userList")) || [];
-    getTickerListData(userList)
+  let userList = JSON.parse(localStorage.getItem("userList")) || [];
+  getTickerListData(userList)
 }
 
 function addTickerToUserList(ticker) {
@@ -93,7 +93,7 @@ function addTickerToUserList(ticker) {
 }
 
 function removeTickerFromUserList(ticker) {
-    console.log(ticker)
+  console.log(ticker)
   let userList = JSON.parse(localStorage.getItem("userList")) || [];
   userList = userList.filter((item) => item !== ticker);
   localStorage.setItem("userList", JSON.stringify(userList));

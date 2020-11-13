@@ -286,23 +286,13 @@ main {
 
 /*-------------Add Icon ------------------*/
 
-#selection-bar {
-  position: relative;
-}
-#selection-bar #stocksearch {
-  margin: 1rem;
-  color: black;
-  padding: 1rem;
-  width: 12rem;
-  height: 2rem;
-  text-transform: uppercase;
-  font: var(--font-regular);
-}
-main #selection-bar button {
-  padding: 0.5rem;
+
+
+main #add-selection {
+  padding: 0.2rem;
   background: var(--button-color-blue);
   color: var(--bright-color);
-  width: 5rem;
+  width: 3rem;
   font: var(--font-regular);
 }
 #errormessage {

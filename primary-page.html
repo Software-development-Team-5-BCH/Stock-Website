@@ -1,143 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Stock price tracker" content="Stock & cryptocurrency tracker" />
-    <meta name="keywords" content="HTML, CSS, JavaScript, JQuery" />
-    <meta
-      name="Group 5"
-      content="Aaron Ojala, Juha Kangas, Louis Atkinson, Prajan Shrestha"
-    />
-    <title>STOCKFLX</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./primary.css" />
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/charts/loader.js"
-    ></script>
-  </head>
-  <body>
-    <div class="sticky-elements">
-      <header>
-        <div id="logo">
-          <a href="index.html"><img src="./Assets/stockflix-light.svg" /></a>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Prices</a></li>
-            <li><a href="#">Accounts</a></li>
-            <li><a href="#">Invite</a></li>
-          </ul>
-        </nav>
-        <div class="nav-item-right">
-          <button type="button" class="buy-sell">Trade</button>
-          <a href="#" id="login-primary">
-            <i class="material-icons md-48">account_circle</i></a
-          >
-        </div>
-      </header>
-      <hr />
-    </div>
-    <main>
-      <section id="selection-bar">
-        <input type="search" id="stocksearch" name="gsearch">
-        <button onclick="submit()" type="submit" id="add-selection" name="plus"><i class="material-icons md-light">add</i> </button>
-      </section>
-      <section id="errormessage"></section>
-      <section id="listing">
-        <table id="stock-listing">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Change</th>
-              <th>Market Cap</th>
-            </tr>
-          </thead>
-          <tbody id="stockwatchlist">
-          </tbody>
-        </table>
-      </section>
-      <section class="tickerStatistics">
-        <div class="priceChart">
-          <div class="tickerStats">
-            <div class="tickerSearch">
-              <input
-                id="autocomplete"
-                type="text"
-                placeholder="Search all assets.."
-              />
-              <div class="suggestions"></div>
-            </div>
-            <h2 id="tickerSymbol"></h2>
-            <div class="dashboard">
-              <h4>50 Day Moving Average</h4>
-              <p id="average"></p>
-            </div>  
-            <div class="dashboard">
-              <h4>52 Week Low</h4>
-              <p id="low"></p>
-            </div>  
-            <div class="dashboard">
-              <h4>52 Week High</h4>
-              <p id="high"></p>
-            </div>  
-            <div class="dashboard">
-              <h4>Country</h4>
-              <p id="country"></p>
-            </div>  
-            <div class="dashboard">
-              <h4>Sector</h4>
-              <p id="sector"></p>
-            </div>  
-            <div class="dashboard">
-              <h4>Currency</h4>
-              <p id="currency"></p>
-            </div>  
-            <div class="dashboard">
-              <h4>Dividend Yield</h4>
-              <p id="dividendyield"></p>
-            </div>  
-            <div class="dashboard">
-              <h4>Market Capitalization</h4>
-              <p id="marketcap"></p>
-            </div> 
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="Stock price tracker" content="Stock & cryptocurrency tracker" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, JQuery" />
+  <meta name="Group 5" content="Aaron Ojala, Juha Kangas, Louis Atkinson, Prajan Shrestha" />
+  <title>STOCKFLX</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./primary.css" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+  <div class="sticky-elements">
+    <header>
+      <div id="logo">
+        <a href="index.html"><img src="./Assets/stockflix-light.svg" /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Prices</a></li>
+          <li><a href="#">Accounts</a></li>
+          <li><a href="#">Invite</a></li>
+        </ul>
+      </nav>
+      <div class="nav-item-right">
+        <button type="button" class="buy-sell">Trade</button>
+        <a href="#" id="login-primary">
+          <i class="material-icons md-48">account_circle</i></a>
+      </div>
+    </header>
+    <hr />
+  </div>
+  <main>
+    <section id="errormessage"></section>
+    <section id="listing">
+      <table id="stock-listing">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Change</th>
+            <th>Market Cap</th>
+          </tr>
+        </thead>
+        <tbody id="stockwatchlist">
+        </tbody>
+      </table>
+    </section>
+    <section class="tickerStatistics">
+      <div class="priceChart">
+        <div class="tickerStats">
+          <div class="tickerSearch">
+            <input id="autocomplete" type="text" placeholder="Search all assets.." />
+            <div class="suggestions"></div>
+            <button onclick="submit()" type="submit" id="add-selection">add </button>
           </div>
-          <div class="priceChartHeader">
-            <div class="priceInfo">
-              <span>€</span>
-              <h2 id="tickerPrice">0</h2>
-              <span id="tickerPriceDecimal">.0</span>
-              <h3 id="tickerPercentageChange">+0%</h3>
-            </div>
-            <div id="timeFrame">
-              <a onclick="drawTickerPriceChart('1W',this)">1W</a>
-              <a onclick="drawTickerPriceChart('1M',this)">1M</a>
-              <a onclick="drawTickerPriceChart('1Y',this)">1Y</a>
-              <a onclick="drawTickerPriceChart('5Y',this)">5Y</a>
-              <a onclick="drawTickerPriceChart('10Y',this)">10Y</a>
-              <a onclick="drawTickerPriceChart('ALL',this)">ALL</a>
-            </div>
+          <h2 id="tickerSymbol"></h2>
+
+          <div class="dashboard">
+            <h4>50 Day Moving Average</h4>
+            <p id="average"></p>
           </div>
-          <div id="tickerPriceChart"></div>
+          <div class="dashboard">
+            <h4>52 Week Low</h4>
+            <p id="low"></p>
+          </div>
+          <div class="dashboard">
+            <h4>52 Week High</h4>
+            <p id="high"></p>
+          </div>
+          <div class="dashboard">
+            <h4>Country</h4>
+            <p id="country"></p>
+          </div>
+          <div class="dashboard">
+            <h4>Sector</h4>
+            <p id="sector"></p>
+          </div>
+          <div class="dashboard">
+            <h4>Currency</h4>
+            <p id="currency"></p>
+          </div>
+          <div class="dashboard">
+            <h4>Dividend Yield</h4>
+            <p id="dividendyield"></p>
+          </div>
+          <div class="dashboard">
+            <h4>Market Capitalization</h4>
+            <p id="marketcap"></p>
+          </div>
         </div>
-      </section>
-    </main>
-    <!-- 
+        <div class="priceChartHeader">
+          <div class="priceInfo">
+            <span>€</span>
+            <h2 id="tickerPrice">0</h2>
+            <span id="tickerPriceDecimal">.0</span>
+            <h3 id="tickerPercentageChange">+0%</h3>
+          </div>
+          <div id="timeFrame">
+            <a onclick="drawTickerPriceChart('1W',this)">1W</a>
+            <a onclick="drawTickerPriceChart('1M',this)">1M</a>
+            <a onclick="drawTickerPriceChart('1Y',this)">1Y</a>
+            <a onclick="drawTickerPriceChart('5Y',this)">5Y</a>
+            <a onclick="drawTickerPriceChart('10Y',this)">10Y</a>
+            <a onclick="drawTickerPriceChart('ALL',this)">ALL</a>
+          </div>
+        </div>
+        <div id="tickerPriceChart"></div>
+      </div>
+    </section>
+  </main>
+  <!-- 
   <footer>
     <div id="footer-container">
       <h4> Contact Us</h4>
@@ -173,8 +153,8 @@
     </div>
   </footer>
   -->
-    <script src="./js/scripts.js"></script>
-    <!-- <script src="js/table.js"></script> -->
+  <script src="./js/scripts.js"></script>
+  <!-- <script src="js/table.js"></script> -->
 </body>
 
 </html>
