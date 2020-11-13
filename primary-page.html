@@ -53,8 +53,10 @@
     </div>
     <main>
       <section id="selection-bar">
-        <input type="search" id="stocksearch" name="gsearch">
-        <button onclick="submit()" type="submit" id="add-selection" name="plus"><i class="material-icons md-light">add</i> </button>
+        <input type="search" id="stocksearch" name="gsearch" />
+        <button onclick="submit()" type="submit" id="add-selection" name="plus">
+          <i class="material-icons md-light">add</i>
+        </button>
       </section>
       <section id="errormessage"></section>
       <section id="listing">
@@ -68,54 +70,55 @@
               <th>Market Cap</th>
             </tr>
           </thead>
-          <tbody id="stockwatchlist">
-          </tbody>
+          <tbody id="stockwatchlist"></tbody>
         </table>
+      </section>
+      <section>
+        <div class="tickerSearch">
+          <input
+            id="autocomplete"
+            type="text"
+            placeholder="Search all assets.."
+          />
+          <div class="suggestions"></div>
+        </div>
       </section>
       <section class="tickerStatistics">
         <div class="priceChart">
           <div class="tickerStats">
-            <div class="tickerSearch">
-              <input
-                id="autocomplete"
-                type="text"
-                placeholder="Search all assets.."
-              />
-              <div class="suggestions"></div>
-            </div>
             <h2 id="tickerSymbol"></h2>
             <div class="dashboard">
               <h4>50 Day Moving Average</h4>
               <p id="average"></p>
-            </div>  
+            </div>
             <div class="dashboard">
               <h4>52 Week Low</h4>
               <p id="low"></p>
-            </div>  
+            </div>
             <div class="dashboard">
               <h4>52 Week High</h4>
               <p id="high"></p>
-            </div>  
+            </div>
             <div class="dashboard">
               <h4>Country</h4>
               <p id="country"></p>
-            </div>  
+            </div>
             <div class="dashboard">
               <h4>Sector</h4>
               <p id="sector"></p>
-            </div>  
+            </div>
             <div class="dashboard">
               <h4>Currency</h4>
               <p id="currency"></p>
-            </div>  
+            </div>
             <div class="dashboard">
               <h4>Dividend Yield</h4>
               <p id="dividendyield"></p>
-            </div>  
+            </div>
             <div class="dashboard">
               <h4>Market Capitalization</h4>
               <p id="marketcap"></p>
-            </div> 
+            </div>
           </div>
           <div class="priceChartHeader">
             <div class="priceInfo">
@@ -175,6 +178,5 @@
   -->
     <script src="./js/scripts.js"></script>
     <!-- <script src="js/table.js"></script> -->
-</body>
-
+  </body>
 </html>
